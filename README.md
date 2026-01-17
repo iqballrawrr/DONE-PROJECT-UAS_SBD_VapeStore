@@ -6,8 +6,8 @@ Proyek ini adalah implementasi database SQL untuk pengelolaan toko vape (Vape St
 
 Dokumentasi ini disusun oleh anggota kelompok berikut:
 
-Iqbal Hadi Widyadana (NIM: 250119011)
-Fauzan Fathoni Khoirul Huda (NIM: 250119007)
+- Iqbal Hadi Widyadana (NIM: 250119011)
+- Fauzan Fathoni Khoirul Huda (NIM: 250119007)
 
 🛠️ Struktur Database
 
