@@ -1,60 +1,88 @@
-💨 Vape Store V1 - Database Management System
+<p align="center">
+  <img src="https://lh3.googleusercontent.com/d/1-TrhdCX8Geg0MPz6wW44Gst2bRhawRC3" width="300" alt="TRPL Logo">
+</p>
 
-Proyek ini adalah implementasi database SQL untuk pengelolaan toko vape (Vape Store). Database ini mencakup manajemen inventaris, data karyawan, shift kerja, hingga sistem transaksi yang dilengkapi dengan fitur kalkulasi pajak dan pelaporan omzet.
+<h1 align="center">💨 Vape Store V1</h1>
 
-👥 Profil Kelompok
+<p align="center">
+  <b>Database Management System untuk Pengelolaan Toko Vape</b><br>
+  Proyek Mata Kuliah <i>Pemrograman Basis Data</i>
+</p>
 
-Dokumentasi ini disusun oleh anggota kelompok berikut:
+---
 
-- Iqbal Hadi Widyadana (NIM: 250119011)
-- Fauzan Fathoni Khoirul Huda (NIM: 250119007)
+## 📌 Deskripsi Proyek
+**Vape Store V1** adalah implementasi **Database SQL** yang dirancang untuk mengelola operasional toko vape secara terstruktur dan efisien.  
+Database ini mencakup pengelolaan **inventaris barang**, **data karyawan**, **jadwal & shift kerja**, serta **sistem transaksi penjualan** yang dilengkapi dengan **perhitungan pajak dan laporan omzet**.
 
-🛠️ Struktur Database
+Proyek ini dibuat sebagai bentuk penerapan materi **query SQL lanjutan**, mulai dari `ORDER BY`, `GROUP BY`, `HAVING`, hingga `JOIN`.
 
-Database vape_storeV1 terdiri dari beberapa tabel utama yang saling berelasi:
+---
 
-Tabel SDM: karyawan, operator (akun sistem), dan kasir (lokasi pos).
+## 👥 Profil Kelompok
+Dokumentasi dan pengembangan database ini disusun oleh:
 
-Tabel Operasional: shift dan jadwal (manajemen waktu kerja).
+- **Iqbal Hadi Widyadana**  
+  🆔 NIM: 250119011  
 
-Tabel Inventaris: items (pendataan stok dan harga barang).
+- **Fauzan Fathoni Khoirul Huda**  
+  🆔 NIM: 250119007  
 
-Tabel Transaksi: transaksi (header penjualan) dan transaksi_detail (rincian item yang terjual).
+---
 
-🚀 Fitur Query Utama
+## 🛠️ Struktur Database
+Database **`vape_storeV1`** terdiri dari beberapa tabel utama yang saling berelasi:
 
-Berikut adalah fitur-fitur query yang diimplementasikan berdasarkan materi ORDER BY hingga JOIN:
+### 🔹 Tabel SDM
+- `karyawan` — data pegawai  
+- `operator` — akun sistem  
+- `kasir` — lokasi atau titik kasir  
 
-1. Manajemen Inventaris
+### 🔹 Tabel Operasional
+- `shift` — jam kerja  
+- `jadwal` — penjadwalan karyawan  
 
-Monitoring Stok: Menggunakan HAVING untuk mendeteksi barang dengan stok kritis (di bawah 20).
+### 🔹 Tabel Inventaris
+- `items` — data stok barang, kategori, dan harga  
 
-Pencarian Produk: Menggunakan operator LIKE untuk mencari kategori produk tertentu (misal: 'Liquid').
+### 🔹 Tabel Transaksi
+- `transaksi` — header penjualan  
+- `transaksi_detail` — detail item yang terjual  
 
-Analisis Harga: Menampilkan harga termahal menggunakan ORDER BY DESC dan rata-rata harga menggunakan fungsi AVG.
+---
 
-2. Sistem Transaksi & Keuangan
+## 🚀 Fitur Query Utama
+Query dibuat berdasarkan materi **ORDER BY hingga JOIN**, dengan fitur sebagai berikut:
 
-Kalkulasi Otomatis: Menghitung estimasi PPN 10% dan harga total setelah pajak menggunakan Alias dan operasi aritmatika.
+### 📦 Manajemen Inventaris
+- **Monitoring Stok**  
+  Menggunakan `HAVING` untuk mendeteksi stok kritis (stok < 20).
+- **Pencarian Produk**  
+  Menggunakan `LIKE` untuk mencari kategori tertentu (contoh: *Liquid*).
+- **Analisis Harga**  
+  - Harga tertinggi (`ORDER BY DESC`)  
+  - Rata-rata harga (`AVG`)
 
-Laporan Omzet: Menggunakan GROUP BY dan SUM untuk menghitung total pendapatan per titik kasir.
+---
 
-Detail Transaksi: Penggunaan JOIN multi-tabel untuk menampilkan struk belanja yang lengkap (Nama Kasir, Nama Barang, dan Subtotal).
+### 💰 Sistem Transaksi & Keuangan
+- **Kalkulasi Otomatis**  
+  Perhitungan PPN 10% dan total harga menggunakan *alias* dan operasi aritmatika.
+- **Laporan Omzet**  
+  `GROUP BY` dan `SUM` untuk menghitung total pendapatan per kasir.
+- **Detail Transaksi Lengkap**  
+  `JOIN` multi-tabel untuk menampilkan struk belanja (Kasir, Barang, Subtotal).
 
-3. Audit & Relasi Data
+---
 
-Audit Akun: Menggunakan LEFT JOIN untuk mengidentifikasi karyawan yang belum memiliki akun operator sistem.
+### 🔍 Audit & Relasi Data
+- **Audit Akun Operator**  
+  `LEFT JOIN` untuk mendeteksi karyawan yang belum memiliki akun sistem.
+- **Relasi Data User**  
+  `RIGHT JOIN` dan `UNION` (simulasi *FULL JOIN*) untuk memetakan data karyawan dan akun login.
 
-Relasi User: Menggunakan RIGHT JOIN dan UNION (Simulasi Full Join) untuk memetakan hubungan antara data personal karyawan dengan kredensial sistem.
+---
 
-📝 Cara Menjalankan
-
-Pastikan Anda memiliki MySQL Server/XAMPP yang aktif.
-
-Salin seluruh konten dari file vape_store-UAS_DONE.sql.
-
-Jalankan query di MySQL Workbench atau phpMyAdmin.
-
-Database vape_store-UAS-DONE akan otomatis terbuat beserta seluruh contoh datanya.
-
-Proyek ini dikembangkan untuk memenuhi tugas mata kuliah Pemrograman Basis Data.
+## 📝 Cara Menjalankan
+1. Pastikan **MySQL Server / XAMPP** dalam keadaan aktif.
+2. Salin seluruh isi file:
